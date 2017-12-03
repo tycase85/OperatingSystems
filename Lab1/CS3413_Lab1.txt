@@ -1,0 +1,14 @@
+1. This is a parent process: 17823  VAR:-1 
+This is a child process: 17824  VAR:1 
+
+2. The received IDs are randomized each time however they child process comes 1 place after the parent thread. The incrementing variable does not increment and decremement properly since the fork() makes a clone and they now use a different local variable for var.
+
+4.clone(child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f5f50512a10) = 17777
+
+5.[rcase@id415m20 ~/Desktop]$ ./CS3413_Lab1_Q1
+
+This is a parent process: 18099  VAR:-1 
+This is a child process: 18100  VAR:1 
+ This is the new pthread id: -556120320 
+
+
